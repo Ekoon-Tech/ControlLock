@@ -8,6 +8,6 @@
 ## comandos 
 
 ### npm i 
-    Para abaixar as dependencias
+   Para abaixar as dependencias
 ### npm start
-    Para executar o projeto 
+   Para executar o projeto 
