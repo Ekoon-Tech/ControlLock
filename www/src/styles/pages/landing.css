@@ -28,6 +28,9 @@
   justify-content: space-between;
 }
 
+#page-landing > div > div.title_mobile {
+  display: none;
+}
 
 #page-landing .content-wrapper main {
   max-width: 1000px;
@@ -72,7 +75,7 @@
   font-weight: 800;
 }
 
-#page-landing > div > div.BlocoInput > button {
+#page-landing > div > div.BlocoInput > form > button {
   width: 100px;
   height: 50px;
   margin: 20px;
@@ -84,8 +87,41 @@
   border: 2px solid rgb(40, 39, 44);
 }
 
-@media only screen and (max-width: 768px) {
+#page-landing > div > div.BlocoInput > div > div.BlocoCodigoRecuperacaoInput > input {
+  color: #000;
+  background: #ebf2f5;
+  padding-left: 5px;
+  width: 200px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 2px solid rgb(40, 39, 44);  
+}
+
+@media only screen and (max-width: 1024px) {
   #page-landing > div > img{
     display: none;
+  }
+  #page-landing > div > main > div > h1{
+    display: none;
+  }
+  #page-landing > div > div.BlocoInput {
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+  }
+  #page-landing > div > div.title_mobile {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  #page-landing > div > div.title_mobile > h1 {
+    font-size: 55px;
+    margin-top: 110px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
   }
 }

@@ -51,6 +51,9 @@ class Landing extends Component {
               <h1>SUA CASA MAIS SEGURA</h1>
             </div>
           </main>
+          <div className="title_mobile">
+              <h1>Control Lock</h1>
+            </div>
           <div className="location">
             <strong>Joinville</strong>
             <span> Santa Catarina</span>
@@ -64,7 +67,7 @@ class Landing extends Component {
                 </div>
 
                 <div className="BlocoPinInput">
-                  <input className="input" type="text" placeholder="Insira o PIN" onKeyUp={this.somenteNumeros} value={this.state.codigo} required pattern="\d{4}" maxLength="4"  onChange={e => this.ChangeCodigo(e.target.value)} />
+                  <input className="input" type="text" placeholder="PIN de 4 Numeros" onKeyUp={this.somenteNumeros} value={this.state.codigo} required pattern="\d{4}" maxLength="4"  onChange={e => this.ChangeCodigo(e.target.value)} />
                 </div>
 
               </div>
@@ -76,7 +79,7 @@ class Landing extends Component {
                 <label>CODIGO DE RECUPERAÇÃO</label>
               </div>
               <div className="BlocoCodigoRecuperacaoInput">
-                <input className="input" type="text" placeholder="Aperte em Gerar" defaultValue={this.state.codigo_de_recuperacao} autoComplete="off" maxLength="0" />
+                <input className="input" type="text" placeholder="Aperte em Gerar" defaultValue={this.state.codigo_de_recuperacao} autoComplete="off" maxLength="0" disabled="disabled" />
               </div>
             </div>
           </div>
