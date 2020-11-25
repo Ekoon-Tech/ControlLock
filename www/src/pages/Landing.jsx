@@ -18,7 +18,8 @@ class Landing extends Component {
   ChangeCodigo(codigo) {
     this.setState({ codigo: codigo })
   }
-  GerarSenha() {
+  GerarSenha(e) {
+    e.preventDefault();
     if (this.state.codigo !== '') {
       var number_array = this.state.codigo.split("");
       var numero_1 = parseInt(number_array[0]);
@@ -55,15 +56,21 @@ class Landing extends Component {
             <span> Santa Catarina</span>
           </div>
           <div className="BlocoInput">
-            <div className="BlocoPin">
-              <div className="BlocoPinTitle">
-                <label>PIN</label>
+
+            <form onSubmit={this.GerarSenha}>
+              <div className="BlocoPin">
+                <div className="BlocoPinTitle">
+                  <label>PIN</label>
+                </div>
+
+                <div className="BlocoPinInput">
+                  <input className="input" type="text" placeholder="Insira o PIN" onKeyUp={this.somenteNumeros} value={this.state.codigo} required pattern="\d{4}" maxLength="4"  onChange={e => this.ChangeCodigo(e.target.value)} />
+                </div>
+
               </div>
-              <div className="BlocoPinInput">
-                <input className="input" type="text" placeholder="Insira o PIN" onKeyUp={this.somenteNumeros} value={this.state.codigo} autoComplete="off" maxLength="4"  onChange={e => this.ChangeCodigo(e.target.value)} />
-              </div>
-            </div>
-            <button className="BotaoGerarPin" type="button" onClick={this.GerarSenha}>Gerar</button>
+              <button className="BotaoGerarPin" type="submit">Gerar</button>
+            </form>
+            
             <div className="BlocoCodigoRecuperacao">
               <div className="BlocoCodigoRecuperacaoTitle">
                 <label>CODIGO DE RECUPERAÇÃO</label>
@@ -73,6 +80,7 @@ class Landing extends Component {
               </div>
             </div>
           </div>
+          
         </div>
       </div>
     );
